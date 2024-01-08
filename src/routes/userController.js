@@ -1,11 +1,11 @@
 const express = require('express');
-const user=require("../dbfiles/user");
+const User = require('../dbfiles/user');
+
 const router = express.Router();
 
 // Get all users
-router.get('/users', async (req, res) => {
-  
-  const users = await user.find({});
+router.get('/', async (req, res) => {
+  const users = await User.find({});
   try {
     res.send(users);
   } catch (error) {
@@ -15,9 +15,8 @@ router.get('/users', async (req, res) => {
 });
 
 // Create a new user
-router.post('/users', async(req, res) => {
-  
-  const newUser=new user(req.body);
+router.post('/', async (req, res) => {
+  const newUser = new User(req.body);
 
   try {
     await newUser.save();
@@ -28,39 +27,36 @@ router.post('/users', async(req, res) => {
   }
 });
 
-
-//update users
-router.put('/users/:id', async (req, res) => {
+// Update Users
+router.put('/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
-    const updatedUser = await user.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(id, req.body, { new: true });
     if (!updatedUser) {
       return res.status(404).send({ message: 'User not found' });
     }
-    res.send(updatedUser);
+    return res.send(updatedUser);
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    return res.status(500).send(error);
   }
 });
 
-
-//delete users
-router.delete('/users/:id', async (req, res) => {
+// delete users
+router.delete('/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
-    const deletedUser = await user.findByIdAndDelete(id);
+    const deletedUser = await User.findByIdAndDelete(id);
     if (!deletedUser) {
       return res.status(404).send({ message: 'User not found' });
     }
-    res.send(deletedUser);
+    return res.send(deletedUser);
   } catch (error) {
     console.error(error);
-    res.status(500).send(error);
+    return res.status(500).send(error);
   }
 });
-
 
 module.exports = router;
