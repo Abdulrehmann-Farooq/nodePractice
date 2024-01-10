@@ -1,10 +1,7 @@
-const express = require('express');
 const User = require('../dbfiles/user');
 
-const router = express.Router();
-
 // Get all users
-router.get('/', async (req, res) => {
+const getUsers = async (req, res) => {
   const users = await User.find({});
   try {
     res.send(users);
@@ -12,12 +9,11 @@ router.get('/', async (req, res) => {
     console.error(error);
     res.status(500).send(error);
   }
-});
+};
 
 // Create a new user
-router.post('/', async (req, res) => {
+const createUser = async (req, res) => {
   const newUser = new User(req.body);
-
   try {
     await newUser.save();
     res.send(newUser);
@@ -25,10 +21,10 @@ router.post('/', async (req, res) => {
     console.error(error);
     res.status(500).send(error);
   }
-});
+};
 
 // Update Users
-router.put('/:id', async (req, res) => {
+const updateUser = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -41,10 +37,10 @@ router.put('/:id', async (req, res) => {
     console.error(error);
     return res.status(500).send(error);
   }
-});
+};
 
 // delete users
-router.delete('/:id', async (req, res) => {
+const deleteUser = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -57,6 +53,10 @@ router.delete('/:id', async (req, res) => {
     console.error(error);
     return res.status(500).send(error);
   }
-});
-
-module.exports = router;
+};
+module.exports = {
+  getUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+};

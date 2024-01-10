@@ -1,12 +1,14 @@
 const express = require('express');
-const userRoutes = require('./routes/userController');
-const connectDB = require('./dbfiles/db'); // Import the database connection function
+const userRoutes = require('./routes/userRoutes');
+const loginRoutes = require('./routes/loginRoute');
+const connectDB = require('./dbfiles/db');
 
 const app = express();
 app.use(express.json());
 
 connectDB();
 
+app.use('/login', loginRoutes);
 app.use('/users', userRoutes);
 
 app.listen(3000, () => {
