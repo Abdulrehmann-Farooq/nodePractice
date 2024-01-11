@@ -7,17 +7,26 @@ const login = async (username, password) => {
   try {
     const user = await User.findOne({ username });
     if (!user) {
-      throw new Error('User not found');
+      return { success: false, message: 'User not found' };
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      throw new Error('Invalid credentials');
+      return { success: false, message: 'Invalid credentials' };
     }
-    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
-    return { token, userId: user.id };
+    const token = jwt.sign(
+      {
+        userId: user.id,
+        username: user.username,
+      },
+      secretKey,
+      { expiresIn: '1h' },
+    );
+    return {
+      success: true, token, userId: user.id, username: user.username,
+    };
   } catch (error) {
     console.error(error);
-    return 'error';
+    return { success: false, message: 'An error occurred' };
   }
 };
 

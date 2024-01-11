@@ -15,9 +15,8 @@ const authenticateToken = (req, res, next) => {
       return res.sendStatus(403); // Invalid token
     }
 
-    // If the token is valid, add the user to the request object
     req.user = user;
-    next(); // Proceed to the next middleware/route handler
+    next();
     return null;
   });
   return null;
