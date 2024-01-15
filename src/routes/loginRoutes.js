@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 // Route to initiate Google OAuth login
-router.get(
+router.post(
   '/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] }),
 );

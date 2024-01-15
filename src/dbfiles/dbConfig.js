@@ -1,9 +1,17 @@
 require('dotenv').config();
 
-const connectionString = process.env.CONNECTION_STRING;
-const secretKey = process.env.SECRET_KEY;
+const {
+  CONNECTION_STRING: connectionString,
+  SECRET_KEY: secretKey,
+  clientID,
+  clientSecret,
+  callback,
+} = process.env;
 
 module.exports = {
   connectionString,
   secretKey,
+  clientID,
+  clientSecret,
+  callback,
 };

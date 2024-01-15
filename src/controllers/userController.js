@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const { v4: uuidv4 } = require('uuid');
 const User = require('../dbfiles/user');
 
 // Get all users
@@ -22,7 +23,7 @@ const createUser = async (req, res) => {
     }
 
     const newUser = new User(req.body);
-
+    newUser.userId = uuidv4();
     const salt = await bcrypt.genSalt(10);
     newUser.password = await bcrypt.hash(newUser.password, salt);
 
@@ -31,7 +32,7 @@ const createUser = async (req, res) => {
     const userForResponse = { ...newUser.doc };
     delete userForResponse.password;
 
-    return res.send(userForResponse);
+    return res.status(200).send('user created');
   } catch (error) {
     console.error(error);
     return res.status(500).send(error);
