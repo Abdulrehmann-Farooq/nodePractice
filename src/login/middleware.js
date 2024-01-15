@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { secretKey } = require('../dbfiles/dbConfig'); // Import your secretKey
+const { secretKey } = require('../dbfiles/dbConfig');
 
 const authenticateToken = (req, res, next) => {
   // Retrieve the token from the request header
