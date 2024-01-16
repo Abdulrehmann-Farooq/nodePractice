@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const path = require('path');
 const userRoutes = require('./routes/userRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const dataRoutes = require('./routes/dataRoutes');
@@ -8,6 +9,9 @@ const googleLogin = require('./login/googleLogin');
 
 const app = express();
 app.use(express.json());
+
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 // Initialize Passport and configure with Google OAuth
 googleLogin(passport);
