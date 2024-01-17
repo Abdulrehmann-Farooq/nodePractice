@@ -8,6 +8,8 @@ const {
   callback,
 } = process.env;
 
+console.log(callback);
+
 module.exports = {
   connectionString,
   secretKey,

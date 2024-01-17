@@ -2,13 +2,14 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../dbfiles/user');
 const { clientID } = require('../dbfiles/dbConfig');
 const { clientSecret } = require('../dbfiles/dbConfig');
+const { callback } = require('../dbfiles/dbConfig');
 
 const googleLogin = async (passport) => {
   passport.use(new GoogleStrategy(
     {
       clientID,
       clientSecret,
-      callbackURL: 'http://localhost:3000/login/auth/google/callback',
+      callbackURL: callback,
     },
     // In the GoogleStrategy configuration
     async (accessToken, refreshToken, profile, cb) => {
