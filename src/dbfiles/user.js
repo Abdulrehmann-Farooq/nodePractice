@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   email: String,
   age: { type: Number, required: false },
   googleId: { type: String, required: false },
+  versionKey: false,
 });
 
 const User = mongoose.model('User', userSchema);
