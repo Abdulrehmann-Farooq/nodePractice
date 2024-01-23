@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "85d77408-8475-4c38-a85d-9f0352171a0f",
+		"name": "nodePractice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32087967"
+	},
+	"item": [
+		{
+			"name": "/users",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTlmYzk5OGQ3MDNjNjAxY2M1YjAzOGQiLCJ1c2VybmFtZSI6ImhlbGxvMCIsImlhdCI6MTcwNDk3NDg3MCwiZXhwIjoxNzA0OTc4NDcwfQ.MuXNEQiC4uDUmbnDctBo4Ce9AN7m221ax_Ba04sBElo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello0\",\r\n    \"password\":\"waxxup\",\r\n    \"name\":\"abdu\",\r\n    \"email\": \"heheheh\",\r\n    \"age\":24\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						},
+						"description": "create user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Johnny Doe\",\r\n  \"email\": \"johnnydoe@example.com\",\r\n  \"age\": 300\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/8",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"8\",\r\n    \"name\": \"Johnny Doeee\",\r\n    \"email\": \"johnnydoe@exampleee.com\",\r\n    \"age\": 30000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/8",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"8\",\r\n    \"name\": \"Johnny Doeee\",\r\n    \"email\": \"johnnydoe@exampleee.com\",\r\n    \"age\": 30000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/login",
+			"item": [
+				{
+					"name": "/login/auth/google",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login/auth/google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login",
+								"auth",
+								"google"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login/auth/google/callback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login/auth/google/callback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login",
+								"auth",
+								"google",
+								"callback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/data",
+			"item": [
+				{
+					"name": "/data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/data/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"data",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/data",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWExMTViMTczYzE1ZGI3ZjlkODZmODYiLCJ1c2VybmFtZSI6ImhlbGxvMDAiLCJpYXQiOjE3MDUwNTU3OTAsImV4cCI6MTcwNTA1OTM5MH0.h65ifOVPwrWyeoskrONfIva5O6Z8aa1IGmtW8QRucGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hello00\",\r\n    \"password\":\"waxxup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/data/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"data",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
